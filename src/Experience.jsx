@@ -23,7 +23,8 @@ export default function Experience() {
             config={{ mass: 2, tension: 400 }}
             cursor={true}
         >
-            <Card />
+            <Card route='/boxle/' color='#ff0000' position={[1, 0, 0]} />
+            <Card route='/portfolio/' color='#0000ff' position={[-1, 0, 0]} />
         </PresentationControls>
     </>
 }

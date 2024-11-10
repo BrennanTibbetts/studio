@@ -11,6 +11,9 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   disable: process.env.NODE_ENV === 'development',
 })
 
+const boxleURL = 'boxle.vercel.app'
+const portfolioURL = 'brennant-portfolio.vercel.app'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // uncomment the following snippet if using styled components
@@ -23,37 +26,37 @@ const nextConfig = {
     return [
       //BOXLE
       {
-        source: '/boxle/assets/:path*',
-        destination: 'https://boxle.vercel.app/boxle/assets/:path*',
+        source: `/boxle/assets/:path*`,
+        destination: `https://${boxleURL}/boxle/assets/:path*`,
       },
       {
-        source: '/boxle/fonts/:path*',
-        destination: 'https://boxle.vercel.app/boxle/fonts/:path*',
+        source: `/boxle/fonts/:path*`,
+        destination: `https://${boxleURL}/boxle/fonts/:path*`,
       },
       {
-        source: '/boxle/:path*',
-        destination: 'https://boxle.vercel.app/:path*',
+        source: `/boxle/:path*`,
+        destination: `https://${boxleURL}/:path*`,
       },
       //PORTFOLIO
       {
-        source: '/portfolio/assets/:path*',
-        destination: 'https://brennantibbetts.online/portfolio/assets/:path*',
+        source: `/portfolio/assets/:path*`,
+        destination: `https://${portfolioURL}/portfolio/assets/:path*`,
       },
       {
-        source: '/portfolio/models/:path*',
-        destination: 'https://brennantibbetts.online/portfolio/models/:path*',
+        source: `/portfolio/models/:path*`,
+        destination: `https://${portfolioURL}/portfolio/models/:path*`,
       },
       {
-        source: '/portfolio/drei/:path*',
-        destination: 'https://brennantibbetts.online/portfolio/drei/:path*',
+        source: `/portfolio/drei/:path*`,
+        destination: `https://${portfolioURL}/portfolio/drei/:path*`,
       },
       {
-        source: '/portfolio/css/:path*',
-        destination: 'https://brennantibbetts.online/portfolio/css/:path*',
+        source: `/portfolio/css/:path*`,
+        destination: `https://${portfolioURL}/portfolio/css/:path*`,
       },
       {
-        source: '/portfolio/:path*',
-        destination: 'https://brennantibbetts.online/:path*',
+        source: `/portfolio/:path*`,
+        destination: `https://${portfolioURL}/:path*`,
       },
     ]
   },
