@@ -1,5 +1,7 @@
 'use client'
 
+import Scene from '@/components/canvas/Scene'
+import Experience from '@/Experience'
 import dynamic from 'next/dynamic'
 
 const Card = dynamic(() => import('@/components/canvas/Card').then((mod) => mod.Card), { ssr: false })
@@ -24,8 +26,7 @@ export default function Page() {
   return (
     <>
       <View className='absolute top-0 flex h-screen w-full flex-col items-center justify-center'>
-        <Card />
-        <Common color={'black'}/>
+        <Experience />
       </View>
     </>
   )

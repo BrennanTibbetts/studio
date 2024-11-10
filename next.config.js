@@ -11,6 +11,7 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   disable: process.env.NODE_ENV === 'development',
 })
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   // uncomment the following snippet if using styled components
   compiler: {
@@ -18,6 +19,45 @@ const nextConfig = {
   },
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   images: {},
+  async rewrites() {
+    return [
+      //BOXLE
+      {
+        source: '/boxle/assets/:path*',
+        destination: 'https://boxle.vercel.app/boxle/assets/:path*',
+      },
+      {
+        source: '/boxle/fonts/:path*',
+        destination: 'https://boxle.vercel.app/boxle/fonts/:path*',
+      },
+      {
+        source: '/boxle/:path*',
+        destination: 'https://boxle.vercel.app/:path*',
+      },
+      //PORTFOLIO
+      {
+        source: '/portfolio/assets/:path*',
+        destination: 'https://brennantibbetts.online/portfolio/assets/:path*',
+      },
+      {
+        source: '/portfolio/models/:path*',
+        destination: 'https://brennantibbetts.online/portfolio/models/:path*',
+      },
+      {
+        source: '/portfolio/drei/:path*',
+        destination: 'https://brennantibbetts.online/portfolio/drei/:path*',
+      },
+      {
+        source: '/portfolio/css/:path*',
+        destination: 'https://brennantibbetts.online/portfolio/css/:path*',
+      },
+      {
+        source: '/portfolio/:path*',
+        destination: 'https://brennantibbetts.online/:path*',
+      },
+    ]
+  },
+  reactStrictMode: true,
   webpack(config, { isServer }) {
     if (!isServer) {
       // We're in the browser build, so we can safely exclude the sharp module
