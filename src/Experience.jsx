@@ -1,30 +1,23 @@
-import { PresentationControls } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import { useControls } from 'leva'
-import { Perf } from 'r3f-perf'
-import { Card } from './components/canvas/Card'
-import Lights from './Lights'
+import Lights from './Lights.jsx'
+import useStore from './stores/useStore.js'
 
-export default function Experience() {
-
-    const props = useControls({
-        background: '#000000',
-        performance: true,
+export default function Experience()
+{
+    const props = useControls('Experience', {
+        backgroundColor: '#000000'
     })
 
     return <>
-        <color args={[props.background]} attach={'background'} />
-        {props.performance && <Perf
-            position={'top-left'}
-        />}
-        <Lights />
-        <PresentationControls
-            global
-            polar={[-1, 0]}
-            config={{ mass: 2, tension: 400 }}
-            cursor={true}
-        >
-            <Card route='/boxle/' color='#ff0000' position={[1, 0, 0]} />
-            <Card route='/portfolio/' color='#0000ff' position={[-1, 0, 0]} />
-        </PresentationControls>
+
+        <color args={[props.backgroundColor]} attach={'background'}/>
+
+        <OrbitControls/>
+        <Lights/>
+        <mesh>
+            <boxGeometry/>
+            <meshStandardMaterial/>
+        </mesh>
     </>
 }

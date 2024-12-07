@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+package-lock.json
 
 # testing
 /coverage
@@ -10,10 +11,12 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
 *.pem
+/.cert/
 
 # debug
 npm-debug.log*
@@ -21,10 +24,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env*
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+!.env.sample
 
 # vercel
 .vercel
@@ -32,9 +34,6 @@ yarn-error.log*
 # next-pwa
 /public/workbox-*.js
 /public/sw.js
-
-# prefer yarn than npm
-package-lock.json
 
 report.*.json
 

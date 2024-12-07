@@ -1,0 +1,36 @@
+{
+  "rewrites": [
+    {
+      "source": "/boxle/assets/:path*",
+      "destination": "https://boxle.vercel.app/boxle/assets/:path*"
+    },
+    {
+      "source": "/boxle/fonts/:path*",
+      "destination": "https://boxle.vercel.app/boxle/fonts/:path*"
+    },
+    {
+      "source": "/boxle/:path*",
+      "destination": "https://boxle.vercel.app/:path*"
+    },
+    {
+      "source": "/portfolio/assets/:path*",
+      "destination": "https://brennant-portfolio.vercel.app/portfolio/assets/:path*"
+    },
+    {
+      "source": "/portfolio/models/:path*",
+      "destination": "https://brennant-portfolio.vercel.app/portfolio/models/:path*"
+    },
+    {
+      "source": "/portfolio/drei/:path*",
+      "destination": "https://brennant-portfolio.vercel.app/portfolio/drei/:path*"
+    },
+    {
+      "source": "/portfolio/css/:path*",
+      "destination": "https://brennant-portfolio.vercel.app/portfolio/css/:path*"
+    },
+    {
+      "source": "/portfolio/:path*",
+      "destination": "https://brennant-portfolio.vercel.app/:path*"
+    }
+  ]
+}
