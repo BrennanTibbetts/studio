@@ -5,7 +5,7 @@ import { useFBO } from '@react-three/drei'
 import '../shaders/simulationMaterial'
 import '../shaders/dofPointsMaterial'
 
-export function ParticleField({ speed, fov, aperture, focus, curl, size = 512, ...props }) {
+export function ParticleField({ speed, fov, aperture, focus, curl, size = 500, ...props }) {
   const simRef = useRef()
   const renderRef = useRef()
   // Set up FBO

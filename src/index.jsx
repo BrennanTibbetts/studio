@@ -7,10 +7,11 @@ import { Perf } from "r3f-perf";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
+
     <Canvas 
         camera={{ 
-            fov: 70, 
-            position: [0, 0, 3] 
+            fov: 80, 
+            position: [0, 0, 0.8] 
         }}>
             <Perf position="top-left"/>
             <Experience/>

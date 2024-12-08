@@ -1,20 +1,18 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import glsl from "vite-plugin-glsl";
-import rewriteAll from "vite-plugin-rewrite-all"; // Plugin for rewriting
-import wasm from "vite-plugin-wasm";
+import { glslify } from "vite-plugin-glslify";
 
 // Vite configuration
 export default defineConfig({
   plugins: [
     react(), 
-    glsl({
-      glslify: true
-    }), 
-    rewriteAll(),
-    wasm()
+    glslify(),
   ],
-  optimizeDeps: {
-    include: ['glslify']
-  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {},
+      }
+    }
+  }
 });

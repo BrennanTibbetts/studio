@@ -2,40 +2,25 @@
   "name": "studio",
   "version": "1.0.2",
   "description": "",
-  "keywords": [
-    "r3f",
-    "react",
-    "three",
-    "vite",
-    "starter",
-    "react three fiber",
-    "sandbox",
-    "codesandbox"
-  ],
   "author": "Brennan Tibbetts",
+  "type": "module",
   "dependencies": {
-    "@babel/core": "^7.26.0",
     "@react-three/drei": "^9.120.3",
     "@react-three/fiber": "^8.17.10",
-    "babel-plugin-glsl": "^1.0.0",
-    "babel-plugin-macros": "^3.1.0",
     "glsl-curl-noise2": "^0.0.4",
     "glsl-noise": "^0.0.0",
-    "glslify": "^7.1.1",
     "leva": "^0.9.35",
+    "path": "^0.12.7",
     "r3f-perf": "^7.2.3",
     "react": "^18",
     "react-dom": "^18",
     "three": "0.171.0",
-    "vite-plugin-glsl": "^1.3.1",
-    "vite-plugin-node-polyfills": "^0.22.0",
-    "vite-plugin-wasm": "^3.3.0",
+    "vite": "^5.4.11",
+    "vite-plugin-glslify": "^2.1.0",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^6.0.3",
-    "vite-plugin-rewrite-all": "^1.0.2"
+    "@vitejs/plugin-react": "^4.3.4"
   },
   "overrides": {
     "leva": {

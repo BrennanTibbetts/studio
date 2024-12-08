@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import { extend } from '@react-three/fiber'
-import glsl from 'vite-plugin-glsl'
 
 function getPoint(v, size, data, offset) {
   v.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1)
