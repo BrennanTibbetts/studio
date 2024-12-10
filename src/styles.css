@@ -31,3 +31,46 @@ body {
   color: black;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Targeting the scrollbar itself */
+::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+/* Targeting the scrollbar track (background area) */
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  border-radius: 10px;
+  backdrop-filter: blur(5px); /* Optional: adds a blurred glass effect */
+}
+
+/* Targeting the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white for the thumb */
+  border-radius: 10px;
+  backdrop-filter: blur(5px); /* Optional: adds blur for a frosted effect */
+}
+
+/* Hover effect for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque when hovered */
+}
+
+/* For horizontal scrollbar, if needed */
+::-webkit-scrollbar-horizontal {
+  height: 12px;
+}
+
+::-webkit-scrollbar-track-horizontal {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent for horizontal */
+  backdrop-filter: blur(5px); /* Optional: adds blur */
+}
+
+::-webkit-scrollbar-thumb-horizontal {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px); /* Optional: adds blur */
+}
+
+::-webkit-scrollbar-thumb-horizontal:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
