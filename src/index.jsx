@@ -10,7 +10,7 @@ root.render(
 
     <Canvas 
         camera={{ 
-            fov: 80, 
+            fov: 15, 
             position: [0, 0, 0.8] 
         }}>
             <Perf position="top-left"/>
