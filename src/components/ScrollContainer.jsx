@@ -1,6 +1,5 @@
 import { Scroll, ScrollControls } from "@react-three/drei";
 import TitleText from "./TitleText";
-import { useContext, useRef } from "react";
 import { useControls } from "leva";
 
 export default function ScrollContainer () {
