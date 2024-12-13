@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import "./styles.css";
 import Experience from "./Experience";
 import Info from "./components/html/Info";
+import { Leva } from "leva";
 
 const root = createRoot(document.getElementById("root"));
 
@@ -17,5 +18,6 @@ root.render(
             }}>
                 <Experience/>
         </Canvas>
+        <Leva/>
     </>
 );
