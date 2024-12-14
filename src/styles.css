@@ -51,6 +51,7 @@ body {
 .site-card-text {
   color: white;
   font-family: 'Libre-Italic';
+  width: 18%;
 }
 
 ::-webkit-scrollbar {

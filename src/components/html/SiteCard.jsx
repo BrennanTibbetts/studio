@@ -15,8 +15,8 @@ export default function SiteCard({title, text, url, image}) {
         imageShowRotationY: -0.3,
         imageHideRotationY: 0,
         imageHidePositionX: 0,
-        textShowPositionX: 2,
-        textHidePositionX: 0,
+        textShowPositionX: 25,
+        textHidePositionX: 10,
         showTransitionDuration: 0.5,
     })
 

@@ -22,7 +22,14 @@ export default function ScrollContainer () {
                     image={'/Capture.JPG'}
                     url={'/boxle/'}
                     title={'Boxle'}
-                    text={'This boxle baby'}
+                    text={`
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        In sit amet cursus purus, sit amet varius magna. 
+                        Donec ornare hendrerit felis, nec vehicula mi sodales nec. 
+                        Etiam cursus feugiat tristique. Proin ac tristique nunc. 
+                        Integer ornare turpis ante, at lobortis purus tincidunt nec. 
+                        Morbi et vulputate eros, in aliquam dolor.
+                    `}
                 />
             </Scroll>
         </ScrollControls>
