@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useControls } from "leva";
 
-export default function Info() {
+export default function Overlay() {
     const [isExpanded, setIsExpanded] = useState(false);
     const props = useControls("Links", {
-        position: [0, 0.6, 0]
+        position: [0, 0.6, 0],
     });
 
     const handleInfoClick = () => {

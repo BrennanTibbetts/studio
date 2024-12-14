@@ -32,20 +32,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-div.site-card {
-  display: flex;
-  gap: 5%;
+@font-face {
+    font-family: 'Libre-Regular';
+    src: url('/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
 }
 
-.site-card img {
-  border-radius: 40px;
-  border: 1px solid white;
+@font-face {
+    font-family: 'Libre-Italic';
+    src: url('/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf') format('truetype');
 }
 
-.site-card div {
+.site-card-image img {
   border-radius: 40px;
   border: 1px solid white;
+  user-select: none;
+}
+
+.site-card-text {
   color: white;
+  font-family: 'Libre-Italic';
 }
 
 ::-webkit-scrollbar {

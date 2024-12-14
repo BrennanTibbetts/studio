@@ -9,6 +9,7 @@
     "@react-three/fiber": "^8.17.10",
     "glsl-curl-noise2": "^0.0.4",
     "glsl-noise": "^0.0.0",
+    "gsap": "^3.12.5",
     "leva": "^0.9.35",
     "path": "^0.12.7",
     "r3f-perf": "^7.2.3",

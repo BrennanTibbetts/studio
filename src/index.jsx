@@ -3,14 +3,14 @@ import { createRoot } from "react-dom/client";
 import { Canvas } from "@react-three/fiber";
 import "./styles.css";
 import Experience from "./Experience";
-import Info from "./components/html/Info";
+import Overlay from "./components/html/Overlay";
 import { Leva } from "leva";
 
 const root = createRoot(document.getElementById("root"));
 
 root.render(
     <>
-        <Info/>
+        <Overlay/>
         <Canvas 
             camera={{ 
                 fov: 15, 

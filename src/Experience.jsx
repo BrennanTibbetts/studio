@@ -4,7 +4,6 @@ import useStore from './stores/useStore.js'
 import { ParticleField } from './components/ParticleField.jsx'
 import { Perf } from 'r3f-perf'
 import ScrollContainer from './components/ScrollContainer.jsx'
-import Info from './components/html/Info.jsx'
 
 export default function Experience()
 {
