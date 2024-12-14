@@ -2,7 +2,7 @@ import { Html } from "@react-three/drei"
 import { useControls } from "leva"
 import '../../styles.css'
 import gsap from "gsap"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function SiteCard({title, text, url, image}) {
 
@@ -15,13 +15,14 @@ export default function SiteCard({title, text, url, image}) {
         imageShowRotationY: -0.3,
         imageHideRotationY: 0,
         imageHidePositionX: 0,
-        textShowPositionX: 25,
-        textHidePositionX: 10,
+        textShowPositionX: 24,
+        textHidePositionX: 20,
         showTransitionDuration: 0.5,
     })
 
     const imageRef = useRef()
     const textRef = useRef()
+
 
     const toggleShowText = () => {
         textHidden ? showText() : hideText()
@@ -55,6 +56,10 @@ export default function SiteCard({title, text, url, image}) {
             duration: props.showTransitionDuration,
         })
     }
+
+    useEffect(() => {
+        hideText()
+    }, [])
 
     return <group
         position={props.position}
