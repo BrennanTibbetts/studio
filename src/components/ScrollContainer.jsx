@@ -1,6 +1,6 @@
 import { Scroll, ScrollControls } from "@react-three/drei";
-import TitleText from "./TitleText";
 import { useControls } from "leva";
+import SiteCard from "./html/SiteCard";
 
 export default function ScrollContainer () {
 
@@ -17,7 +17,12 @@ export default function ScrollContainer () {
             infinite={props.infinite}
         >
             <Scroll>
-                <TitleText/>
+                <SiteCard
+                    image={'/Capture.JPG'}
+                    url={'/boxle/'}
+                    title={'Boxle'}
+                    text={'This boxle baby'}
+                />
             </Scroll>
         </ScrollControls>
     </>

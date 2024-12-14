@@ -32,6 +32,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+div.site-card {
+  display: flex;
+  gap: 5%;
+}
+
+.site-card img {
+  border-radius: 40px;
+  border: 1px solid white;
+}
+
+.site-card div {
+  border-radius: 40px;
+  border: 1px solid white;
+  color: white;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
