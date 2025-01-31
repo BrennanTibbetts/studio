@@ -4,7 +4,6 @@ import useStore from './stores/useStore.js'
 import { ParticleField } from './components/ParticleField.jsx'
 import { Perf } from 'r3f-perf'
 import ScrollContainer from './components/ScrollContainer.jsx'
-import HoneycombGrid from './components/html/HoneycombGrid.jsx'
 import TitleText from './components/TitleText.jsx'
 
 export default function Experience()
@@ -20,7 +19,6 @@ export default function Experience()
         />}
         <color args={[props.backgroundColor]} attach={'background'}/>
         {/* <ScrollContainer/> */}
-        <HoneycombGrid/>
         <ParticleField/>
     </>
 }

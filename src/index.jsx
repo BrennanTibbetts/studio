@@ -5,12 +5,14 @@ import "./styles.css";
 import Experience from "./Experience";
 import Overlay from "./components/html/Overlay";
 import { Leva } from "leva";
+import HoneycombGrid from "./components/html/HoneycombGrid";
 
 const root = createRoot(document.getElementById("root"));
 
 root.render(
     <>
         <Overlay/>
+        <HoneycombGrid/>
         <Canvas 
             camera={{ 
                 fov: 15, 
