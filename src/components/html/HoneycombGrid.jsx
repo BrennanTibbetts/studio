@@ -87,7 +87,7 @@ const HoneycombGrid = ({ items }) => {
             fontFamily: '"Libre Baskerville", serif',
         },
         arrows: {
-            filter: 'brightness(0) invert(0.5)',
+            // filter: 'brightness(0) invert(0.5)',
             width: '4vw',
             height: '4vw',
             display: 'block',
