@@ -19,7 +19,7 @@ const items = [
         { image: "/linkImages/linkedIn.png", link: "https://linkedin.com/in/brennan-t-tibbetts/" },
     ],
     [
-        { image: "", link: "" },
+        { image: ""},
         { image: "linkImages/linkTree.png", link: "https://linktr.ee/brennanttibbetts" },
     ],
 ];

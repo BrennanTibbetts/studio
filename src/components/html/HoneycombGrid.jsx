@@ -73,6 +73,17 @@ const HoneycombGrid = ({ items }) => {
             alignItems: "center",
             justifyContent: "center",
         },
+        staticGridItem: {
+            width: "20vw",
+            height: "20vw",
+            borderRadius: "50%",
+            overflow: "hidden",
+            transition: "transform 0.4s ease-out",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "default",
+        },
         image: {
             width: "100%",
             height: "100%",
@@ -87,13 +98,49 @@ const HoneycombGrid = ({ items }) => {
             fontFamily: '"Libre Baskerville", serif',
         },
         arrows: {
-            // filter: 'brightness(0) invert(0.5)',
             width: '4vw',
             height: '4vw',
             display: 'block',
             margin: '0 auto',
             marginBottom: '15vh',
         }
+    };
+
+    const renderGridItem = (item, rowIndex, colIndex) => {
+        const baseScale = scales[`${rowIndex}-${colIndex}`] || 1;
+        const hoverScale = hoveredItem === `${rowIndex}-${colIndex}` ? 1.15 : 1.0;
+        const scale = `scale(${baseScale * hoverScale})`;
+
+        if (item.link) {
+            return (
+                <a
+                    key={colIndex}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        ...styles.gridItem,
+                        transform: scale,
+                    }}
+                    onMouseEnter={() => handleMouseEnter(`${rowIndex}-${colIndex}`)}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <img src={item.image} alt="" style={styles.image} />
+                </a>
+            );
+        }
+
+        return (
+            <div
+                key={colIndex}
+                style={{
+                    ...styles.staticGridItem,
+                    transform: scale,
+                }}
+            >
+                <img src={item.image} alt="" style={styles.image} />
+            </div>
+        );
     };
 
     return (
@@ -103,26 +150,7 @@ const HoneycombGrid = ({ items }) => {
             <div className="grid-container">
                 {items.map((row, rowIndex) => (
                     <div key={rowIndex} style={styles.row} className="grid-row">
-                        {row.map((item, colIndex) => {
-                            const baseScale = scales[`${rowIndex}-${colIndex}`] || 1;
-                            const hoverScale = hoveredItem === `${rowIndex}-${colIndex}` ? 1.15 : 1.0;
-                            return (
-                                <a
-                                    key={colIndex}
-                                    href={item.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{
-                                        ...styles.gridItem,
-                                        transform: `scale(${baseScale * hoverScale})`,
-                                    }}
-                                    onMouseEnter={() => handleMouseEnter(`${rowIndex}-${colIndex}`)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <img src={item.image} alt="" style={styles.image} />
-                                </a>
-                            );
-                        })}
+                        {row.map((item, colIndex) => renderGridItem(item, rowIndex, colIndex))}
                     </div>
                 ))}
             </div>
