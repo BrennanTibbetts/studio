@@ -9,10 +9,22 @@ import HoneycombGrid from "./components/html/HoneycombGrid";
 
 const root = createRoot(document.getElementById("root"));
 
+const items = [
+    [
+        { image: "/icons/github.png", link: "https://github.com/BrennanTibbetts" },
+        { image: "/Capture.JPG", link: "/boxle" }
+    ],
+    [
+        { image: "/preview.gif", link: "/portfolio" },
+        { image: "/preview.gif", link: "/portfolio" },
+        { image: "/preview.gif", link: "/portfolio" },
+    ]
+];
+
 root.render(
     <>
         <Overlay/>
-        <HoneycombGrid/>
+        <HoneycombGrid items={items}/>
         <Canvas 
             camera={{ 
                 fov: 15, 

@@ -6,7 +6,7 @@ import { useControls } from 'leva'
 import '../shaders/simulationMaterial'
 import '../shaders/dofPointsMaterial'
 
-export function ParticleField({size=512}) {
+export function ParticleField({size=220}) {
 
   const props = useControls('Particle Field', {
       focus: { value: 4.85, min: 0, max: 10, step: 0.01 },

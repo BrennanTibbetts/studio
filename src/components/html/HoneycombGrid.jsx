@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-const HoneycombGrid = () => {
-    const numRows = 10;
-    const numCols = Array.from({ length: numRows }, (_, i) => (i % 2 === 0 ? 2 : 3));
+const HoneycombGrid = ({ items }) => {
     const scrollContainerRef = useRef(null);
     const [scales, setScales] = useState({});
     const [hoveredItem, setHoveredItem] = useState(null);
@@ -10,7 +8,7 @@ const HoneycombGrid = () => {
     useEffect(() => {
         const handleScroll = () => {
             if (!scrollContainerRef.current) return;
-            const container = scrollContainerRef.current.querySelector('.grid-container');
+            const container = scrollContainerRef.current.querySelector(".grid-container");
             if (!container) return;
 
             const containerRect = scrollContainerRef.current.getBoundingClientRect();
@@ -22,12 +20,10 @@ const HoneycombGrid = () => {
                     const itemRect = item.getBoundingClientRect();
                     const itemCenterY = itemRect.top + itemRect.height / 2 + (scrollContainerRef.current.clientHeight / 2);
                     const distance = Math.abs(centerY - itemCenterY / 2);
-
                     const scale = Math.max(1.0, 1.15 - distance / 1500);
                     newScales[`${rowIndex}-${colIndex}`] = scale;
                 });
             });
-
             setScales(newScales);
         };
 
@@ -37,8 +33,8 @@ const HoneycombGrid = () => {
         return () => container.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handleMouseEnter = (rowIndex, colIndex) => {
-        setHoveredItem(`${rowIndex}-${colIndex}`);
+    const handleMouseEnter = (index) => {
+        setHoveredItem(index);
     };
 
     const handleMouseLeave = () => {
@@ -47,38 +43,48 @@ const HoneycombGrid = () => {
 
     const styles = {
         scrollContainer: {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '100vw',
-            maxHeight: '100vh',
-            overflowY: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "100vw",
+            maxHeight: "100vh",
+            overflowY: "auto",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
             zIndex: 10,
+            paddingBottom: '40vh',
         },
         row: {
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '6vw',
-            width: '100%',
+            display: "flex",
+            justifyContent: "center",
+            gap: "6vw",
+            width: "100%",
         },
         gridItem: {
-            width: '20vw',
-            height: '20vw',
-            background: '#BBB',
-            borderRadius: '50%',
-            transition: 'transform 0.7s ease-out',
+            width: "20vw",
+            height: "20vw",
+            borderRadius: "50%",
+            overflow: "hidden",
+            transition: "transform 0.4s ease-out",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+        },
+        image: {
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
         },
         title: {
-            color: '#bbb',
-            fontSize: '4vw',
-            textAlign: 'center',
-            fontStyle: 'italic',
-            marginTop: '45vh',
-            marginBottom: '35vh',
+            color: "#bbb",
+            fontSize: "4vw",
+            textAlign: "center",
+            fontStyle: "italic",
+            marginTop: "45vh",
+            marginBottom: "35vh",
             fontFamily: '"Libre Baskerville", serif',
         },
         arrows: {
@@ -94,27 +100,28 @@ const HoneycombGrid = () => {
     return (
         <div style={styles.scrollContainer} ref={scrollContainerRef}>
             <div style={styles.title}>BRENNAN.STUDIO</div>
-            <img 
-                style={styles.arrows} 
-                src='../../../public/icons/two-way-arrows-svgrepo-com.svg'
-                alt="Directional arrows"
-            />
+            <img style={styles.arrows} src="/icons/two-way-arrows-svgrepo-com.svg"/>
             <div className="grid-container">
-                {numCols.map((cols, rowIndex) => (
+                {items.map((row, rowIndex) => (
                     <div key={rowIndex} style={styles.row} className="grid-row">
-                        {Array.from({ length: cols }, (_, colIndex) => {
+                        {row.map((item, colIndex) => {
                             const baseScale = scales[`${rowIndex}-${colIndex}`] || 1;
                             const hoverScale = hoveredItem === `${rowIndex}-${colIndex}` ? 1.15 : 1.0;
                             return (
-                                <div
+                                <a
                                     key={colIndex}
+                                    href={item.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     style={{
                                         ...styles.gridItem,
                                         transform: `scale(${baseScale * hoverScale})`,
                                     }}
-                                    onMouseEnter={() => handleMouseEnter(rowIndex, colIndex)}
+                                    onMouseEnter={() => handleMouseEnter(`${rowIndex}-${colIndex}`)}
                                     onMouseLeave={handleMouseLeave}
-                                />
+                                >
+                                    <img src={item.image} alt="" style={styles.image} />
+                                </a>
                             );
                         })}
                     </div>
