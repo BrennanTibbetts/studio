@@ -79,7 +79,7 @@ const HoneycombGrid = ({ items }) => {
             objectFit: "cover",
         },
         title: {
-            fontSize: "4vw",
+            fontSize: "max(4vh, 4vw)",
             textAlign: "center",
             fontStyle: "italic",
             marginTop: "45vh",
