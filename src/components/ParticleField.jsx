@@ -9,11 +9,11 @@ import '../shaders/dofPointsMaterial'
 export function ParticleField({size=220}) {
 
   const props = useControls('Particle Field', {
-      focus: { value: 4.85, min: 0, max: 10, step: 0.01 },
-      speed: { value: 10, min: 0.1, max: 100, step: 0.1 },
-      aperture: { value: 7, min: 0, max: 10, step: 0.1 },
-      fov: { value: 20, min: 0, max: 200 },
-      curl: { value: 0.2, min: 0.001, max: 0.5, step: 0.001 }
+      focus: { value: 4.85, min: 4, max: 6, step: 0.01 },
+      speed: { value: 0.3, min: 0.1, max: 100, step: 0.1 },
+      aperture: { value: 0.2, min: 0, max: 10, step: 0.1 },
+      fov: { value: 0, min: 0, max: 200 },
+      curl: { value: 0.11, min: 0.001, max: 0.5, step: 0.001 }
   })
 
   const simRef = useRef()
