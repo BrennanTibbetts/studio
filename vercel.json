@@ -31,6 +31,18 @@
     {
       "source": "/portfolio/:path*",
       "destination": "https://brennant-portfolio.vercel.app/:path*"
+    },
+    {
+      "source": "/gallery/assets/:path*",
+      "destination": "https://scene-gallery.vercel.app/gallery/assets/:path*"
+    },
+    {
+      "source": "/gallery/fonts/:path*",
+      "destination": "https://scene-gallery.vercel.app/gallery/fonts/:path*"
+    },
+    {
+      "source": "/gallery/:path*",
+      "destination": "https://scene-gallery.vercel.app/:path*"
     }
   ]
 }

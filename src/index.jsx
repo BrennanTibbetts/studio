@@ -10,7 +10,7 @@ const root = createRoot(document.getElementById("root"));
 
 const items = [
     [
-        { image: "/linkImages/moe.jpg", link: "/shader-gallery" },
+        { image: "/linkImages/moe.jpg", link: "/gallery" },
         { image: "/linkImages/BOXLE.png", link: "/boxle" },
     ],
     [
